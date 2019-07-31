@@ -1,5 +1,7 @@
 package com.example.demo.DTO;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
  * @PackageName:com.example.demo.DTO
  * @ClassName:User
@@ -13,6 +15,7 @@ public class User {
     //用户账号
     private String userName;
     //用户密码
+    @JsonIgnore
     private String password;
 
     public Integer getId() {
