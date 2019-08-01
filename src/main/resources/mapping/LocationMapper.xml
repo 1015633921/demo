@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.LocationMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.demo.DTO.Location">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="user_id" jdbcType="INTEGER" property="userId" />
+        <result column="address" jdbcType="VARCHAR" property="address" />
+        <result column="longitude" jdbcType="DOUBLE" property="longitude" />
+        <result column="latitude" jdbcType="DOUBLE" property="latitude" />
+    </resultMap>
+
+    <insert id="addLocation" >
+        insert into user_collect (user_id,address,longitude,latitude) values (
+        #{userId,jdbcType=INTEGER},
+        #{address,jdbcType=VARCHAR},
+        #{longitude,jdbcType=DOUBLE},
+        #{latitude,jdbcType=DOUBLE}
+        )
+    </insert>
+    <select id="queryLocation" parameterType="int" resultMap="BaseResultMap">
+        select * from user_collect where user_id =#{userId,jdbcType=INTEGER}
+    </select>
+
+    <delete id="deleteLocation" parameterType="int">
+        delete from user_collect where id =#{id,jdbcType=INTEGER}
+    </delete>
+
+</mapper>
