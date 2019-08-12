@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.RecommendLocationMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.demo.DTO.RecommedLocation">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="between" jdbcType="VARCHAR" property="between" />
+        <result column="sex" jdbcType="DOUBLE" property="sex" />
+        <result column="phone_charge" jdbcType="DOUBLE" property="phoneCharge" />
+        <result column="e_age0" jdbcType="DOUBLE" property="eAge" />
+        <result column="resident_pop" jdbcType="DOUBLE" property="resident" />
+        <result column="work_pop" jdbcType="DOUBLE" property="workPop" />
+        <result column="lng" jdbcType="DOUBLE" property="lng" />
+        <result column="lat" jdbcType="DOUBLE" property="lat" />
+        <result column="shop_area" jdbcType="INTEGER" property="shopArea" />
+        <result column="shop_price" jdbcType="INTEGER" property="shopPrice" />
+        <result column="house_price" jdbcType="INTEGER" property="housePrice" />
+        <result column="hourse_name" jdbcType="VARCHAR" property="houseName" />
+        <result column="prob" jdbcType="DOUBLE" property="prob" />
+        <result column="ima_path" jdbcType="VARCHAR" property="imagePath"/>
+    </resultMap>
+
+    <insert id="insert" parameterType="com.example.demo.DTO.RecommedLocation">
+       insert into shixidb.area_price (area_price.sex,area_price.phone_charge,area_price.e_age0,
+		area_price.resident_pop,area_price.work_pop,area_price.lng,area_price.lat,area_price.shop_area,area_price.shop_price,area_price.house_price,area_price.prob)
+        VALUES (
+        #{sex},
+        #{phoneCharge},
+        #{eAge},
+        #{resident},
+        #{workPop},
+        #{lng},
+        #{lat},
+        #{shopArea},
+        #{shopPricel},
+        #{housePrice},
+        #{prob}
+        )
+    </insert>
+    <select id="getAddr" resultType="com.example.demo.DTO.Address" >
+        select lng,lat  from shixidb.area_price where 1=1;
+    </select>
+
+    <select id="queryLocation" parameterType="String" resultType="com.example.demo.DTO.RecommedLocation">
+        select  id as id,sex as sex,phone_charge as phoneCharge,e_age0 as eAge ,resident_pop as resident,
+        work_pop as workPop,lng as lng,lat as lat,shop_area as shopArea,
+        shop_price as shopPrice,house_price as housePrice,hourse_name as houseName,prob as prob ,ima_path as imagePath
+
+        from shixidb.area_price v where v.between = #{price}
+    </select>
+</mapper>

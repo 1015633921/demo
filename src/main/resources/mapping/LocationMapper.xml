@@ -4,22 +4,22 @@
 
     <resultMap id="BaseResultMap" type="com.example.demo.DTO.Location">
         <id column="id" jdbcType="INTEGER" property="id" />
-        <result column="user_id" jdbcType="INTEGER" property="userId" />
+        <result column="user_name" jdbcType="VARCHAR" property="userName" />
         <result column="address" jdbcType="VARCHAR" property="address" />
         <result column="longitude" jdbcType="DOUBLE" property="longitude" />
         <result column="latitude" jdbcType="DOUBLE" property="latitude" />
     </resultMap>
 
     <insert id="addLocation" >
-        insert into user_collect (user_id,address,longitude,latitude) values (
-        #{userId,jdbcType=INTEGER},
+        insert into user_collect (user_name,address,longitude,latitude) values (
+        #{userName,jdbcType=VARCHAR},
         #{address,jdbcType=VARCHAR},
         #{longitude,jdbcType=DOUBLE},
         #{latitude,jdbcType=DOUBLE}
         )
     </insert>
-    <select id="queryLocation" parameterType="int" resultMap="BaseResultMap">
-        select * from user_collect where user_id =#{userId,jdbcType=INTEGER}
+    <select id="queryLocation" parameterType="String" resultMap="BaseResultMap">
+        select * from user_collect where user_name =#{userName,jdbcType=VARCHAR}
     </select>
 
     <delete id="deleteLocation" parameterType="int">

@@ -1,0 +1,475 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>推荐地点</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="resources/css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
+    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="files/map/styles.css" type="text/css" rel="stylesheet"/>
+    <script src="resources/scripts/jquery-1.7.1.min.js"></script>
+	<script src="layer/layer.js"></script>
+    <script src="resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
+    <script src="resources/scripts/axure/axQuery.js"></script>
+    <script src="resources/scripts/axure/globals.js"></script>
+    <script src="resources/scripts/axutils.js"></script>
+    <script src="resources/scripts/axure/annotation.js"></script>
+    <script src="resources/scripts/axure/axQuery.std.js"></script>
+    <script src="resources/scripts/axure/doc.js"></script>
+    <script src="data/document.js"></script>
+    <script src="resources/scripts/messagecenter.js"></script>
+    <script src="resources/scripts/axure/events.js"></script>
+    <script src="resources/scripts/axure/recording.js"></script>
+    <script src="resources/scripts/axure/action.js"></script>
+    <script src="resources/scripts/axure/expr.js"></script>
+    <script src="resources/scripts/axure/geometry.js"></script>
+    <script src="resources/scripts/axure/flyout.js"></script>
+    <script src="resources/scripts/axure/ie.js"></script>
+    <script src="resources/scripts/axure/model.js"></script>
+    <script src="resources/scripts/axure/repeater.js"></script>
+    <script src="resources/scripts/axure/sto.js"></script>
+    <script src="resources/scripts/axure/utils.temp.js"></script>
+    <script src="resources/scripts/axure/variables.js"></script>
+    <script src="resources/scripts/axure/drag.js"></script>
+    <script src="resources/scripts/axure/move.js"></script>
+    <script src="resources/scripts/axure/visibility.js"></script>
+    <script src="resources/scripts/axure/style.js"></script>
+    <script src="resources/scripts/axure/adaptive.js"></script>
+    <script src="resources/scripts/axure/tree.js"></script>
+    <script src="resources/scripts/axure/init.temp.js"></script>
+    <script src="files/map/data.js"></script>
+    <script src="resources/scripts/axure/legacy.js"></script>
+    <script src="resources/scripts/axure/viewer.js"></script>
+    <script src="resources/scripts/axure/math.js"></script>
+    <script type="text/javascript">
+      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+    </script>
+
+	<!-- 引入百度地图-->
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=vsDojh4W2NSq0wYvf6bGzawwp2bjACgx"></script>
+
+	
+  </head>
+  <body>
+    <div id="base" class="">
+
+      <!-- 背景 (动态面板) -->
+      <div id="u236" class="ax_default" data-label="背景">
+        <div id="u236_state0" class="panel_state" data-label="1">
+          <div id="u236_state0_content" class="panel_state_content">
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u237" class="ax_default _默认样式 selected">
+        <div id="u237_div" class="selected"></div>
+        <!-- Unnamed () -->
+        <div id="u238" class="text" style="visibility: visible;">
+          <p><span>商铺选址平台</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (图片) -->
+      <div id="u239" class="ax_default _图片1">
+        <img id="u239_img" class="img " src="images/login/u3.png"/>
+        <!-- Unnamed () -->
+        <div id="u240" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u241" class="ax_default _默认样式">
+        <div id="u241_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u242" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (图片) -->
+      <div id="u243" class="ax_default _图片1">
+        <img id="u243_img" class="img " src="images/map/u243.png"/>
+        <!-- Unnamed () -->
+        <div id="u244" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (文本框) -->
+      <div id="u245" class="ax_default text_field">
+        <input id="u245_input" type="text" value=""/>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u246" class="ax_default heading_2">
+        <div id="u246_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u247" class="text" style="visibility: visible;">
+          <p><span>当前城市：重庆</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u248" class="ax_default primary_button">
+        <div id="u248_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u249" class="text" style="visibility: visible;">
+          <p><span>更改</span></p>
+        </div>
+      </div>
+
+      <!-- 地图 (动态面板) -->
+      <div id="u250" class="ax_default" data-label="地图">
+	  	<div id="aa" scrolling="yes">
+		</div>
+		<div id="close"></div>
+        <div id="u250_state0" class="panel_state" data-label="State1">
+          <div id="u250_state0_content" class="panel_state_content">
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (图片) -->
+      <div id="u251" class="ax_default _图片">
+        <!--<img id="u251_img" class="img " src="images/map/u251.png"/>
+         Unnamed () 
+        <div id="u252" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>-->
+      </div>
+
+
+	  <!--初始化地图-->
+		<script type="text/javascript">
+			// 百度地图API功能
+			var map = new BMap.Map("u251");    // 创建Map实例
+			map.centerAndZoom(new BMap.Point(106.585458,29.565478), 15);  // 初始化地图,设置中心点坐标和地图级别
+			//添加地图类型控件
+			map.addControl(new BMap.MapTypeControl({
+				mapTypes:[
+					BMAP_NORMAL_MAP,
+					BMAP_HYBRID_MAP
+				]}));	  
+			map.setCurrentCity("重庆");          // 设置地图显示的城市 此项是必须设置的
+			map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+
+
+
+			// 定义第一个（放大）控件类,即function
+			function ZoomControl(){
+			  // 默认停靠位置和偏移量
+			  this.defaultAnchor = BMAP_ANCHOR_TOP_LEFT;
+			  this.defaultOffset = new BMap.Size(10, 535);
+			}
+
+			// 通过JavaScript的prototype属性继承于BMap.Control
+			ZoomControl.prototype = new BMap.Control();
+
+			// 自定义控件必须实现自己的initialize方法,并且将控件的DOM元素返回
+			// 在本方法中创建个div元素作为控件的容器,并将其添加到地图容器中
+			ZoomControl.prototype.initialize = function(map){
+			  // 创建一个DOM元素
+			  var div = document.createElement("img");
+			  div.src = "images/map/u263.png";
+			  // 设置样式
+			  div.style.cursor = "pointer";
+			  div.style.height = "34px";
+			  div.style.width = "34px";
+			  // 绑定事件,点击一次放大两级
+			  div.onclick = function(e){
+				map.setZoom(map.getZoom() + 1);
+			  }
+			  // 添加DOM元素到地图中
+			  map.getContainer().appendChild(div);
+			  // 将DOM元素返回
+			  return div;
+			}
+
+			// 定义第二个（缩小）控件类,即function
+			function ZoomControl1(){
+			  // 默认停靠位置和偏移量
+			  this.defaultAnchor = BMAP_ANCHOR_TOP_LEFT;
+			  this.defaultOffset = new BMap.Size(10, 587);
+			}
+
+			// 通过JavaScript的prototype属性继承于BMap.Control
+			ZoomControl1.prototype = new BMap.Control();
+
+			// 自定义控件必须实现自己的initialize方法,并且将控件的DOM元素返回
+			// 在本方法中创建个div元素作为控件的容器,并将其添加到地图容器中
+			ZoomControl1.prototype.initialize = function(map){
+			  // 创建一个DOM元素
+			  var div = document.createElement("img");
+			  div.src = "images/map/u265.png";
+			  // 设置样式
+			  div.style.cursor = "pointer";
+			  div.style.height = "34px";
+			  div.style.width = "34px";
+			  // 绑定事件,点击一次放大两级
+			  div.onclick = function(e){
+				map.setZoom(map.getZoom() - 1);
+			  }
+			  // 添加DOM元素到地图中
+			  map.getContainer().appendChild(div);
+			  // 将DOM元素返回
+			  return div;
+			}
+
+
+			// 创建控件
+			var myZoomCtrl = new ZoomControl();
+			var myZoomCtrl1 = new ZoomControl1();
+			// 添加到地图当中
+			map.addControl(myZoomCtrl);
+			map.addControl(myZoomCtrl1);
+
+			//搜索
+
+			function serch(){
+				var input = document.getElementById("u257_input").value;
+				var local = new BMap.LocalSearch(map, {
+					renderOptions:{map: map}
+				});
+				local.search(input);
+			}
+
+			//定位当前位置
+			function locations(){
+				 var geolocation = new BMap.Geolocation();
+				 geolocation.getCurrentPosition(function(r){
+					if(this.getStatus() == BMAP_STATUS_SUCCESS){
+						var mk = new BMap.Marker(r.point);
+						map.addOverlay(mk);
+						map.panTo(r.point);
+						alert('您的位置：'+r.point.lng+','+r.point.lat);
+					}
+					else {
+						alert('failed'+this.getStatus());
+					}
+				 },{enableHighAccuracy: true})
+			}
+
+
+
+			var json_data = [[106.584617,29.567479,"洪崖洞","{'男':10,'女':90,'已婚':50,'未婚':50,'生育':40,'未生育':60}"],
+							[106.569669,29.561007,"七星岗","{'男':20,'女':80,'已婚':40,'未婚':60,'生育':30,'未生育':70}"],
+							[106.557309,29.568547,"三峡博物馆","{'男':40,'女':60,'已婚':10,'未婚':90,'生育':70,'未生育':30}"]];
+			var pointArray = new Array();
+			for(var i=0;i<json_data.length;i++){
+				var marker = new BMap.Marker(new BMap.Point(json_data[i][0], json_data[i][1])); // 创建点
+				var content = json_data[i][2];
+				var data = json_data[i][3];
+				map.addOverlay(marker);    //增加点
+				pointArray[i] = new BMap.Point(json_data[i][0], json_data[i][1]);
+				addClickHandler(data,content,marker);
+			}
+			function addClickHandler(data,content,marker){
+				marker.addEventListener("click",function(e){
+						openInfo(data,content,e)}
+				);
+			}
+			//让所有点在视野范围内
+			map.setViewport(pointArray);
+			//获取覆盖物位置
+			function openInfo(data,content,e){
+				//var p = e.target;
+				//alert("marker的位置是" + p.getPosition().lng + "," + p.getPosition().lat);
+				if(typeof(Storage)==undefined){
+					alert('此浏览器可能不支持部分功能')
+				} else {
+					localStorage.setItem("name",content);
+					localStorage.setItem("data",data);
+					
+				}
+
+							/*layer.open({
+								  type: 2 //Page层类型
+								  ,title: '数据图表'
+								  ,shade: 0.3 //遮罩透明度
+								  ,maxmin: true //允许全屏最小化
+								  ,anim: 1 //0-6的动画形式，-1不开启
+									,area: ['60%', '60%']
+								  ,content: 'char.html'
+								  ,success: function (layero, index) {
+									layer.iframeAuto(index);
+									}
+							});*/
+							layer.tab({
+								  anim: 1,
+								  shade: 0.3,
+								  maxmin: true,
+								  resize:true,
+								  //scrollbar: false,
+								  area: ['70%', '70%'],
+								  tab: [{
+									title: '综合评分', 
+									content: '<iframe src="https://www.baidu.com/s?ie=utf-8&f=3&rsv_bp=1&tn=02003390_43_hao_pg&wd=%E8%AE%A9%E6%96%87%E5%AD%97%E5%9C%A8div%E4%B8%AD%E4%B8%8A%E4%B8%8B%E5%B1%85%E4%B8%AD&oq=%25E8%25AE%25A9%25E6%2596%2587%25E5%25AD%2597%25E5%259C%25A8div%25E4%25B8%258A%25E4%25B8%258B%25E5%25B1%2585%25E4%25B8%25AD&rsv_pq=a57e5291004eb64f&rsv_t=d4bfcXMW1VjplE%2F287aei8FPTGWi8IIFEVzElyzYe1pNisTIU9kL8szfuZI%2FbyR7vzzBq9FQK0Tt&rqlang=cn&rsv_enter=0&rsv_dl=ts_2&rsv_sug3=65&rsv_sug1=37&rsv_sug7=100&rsv_sug2=1&prefixsug=%25E8%25AE%25A9%25E6%2596%2587%25E5%25AD%2597%25E5%259C%25A8div&rsp=2&inputT=4208&rsv_sug4=4502&rsv_sug=1"></iframe>'
+								  }, {
+									title: '客流因素', 
+									content: '<iframe src="char.html"></iframe>'
+								  }, {
+									title: '消费水平', 
+									content: '<iframe src="char.html"></iframe>'
+								  }, {
+									title: '租金情况', 
+									content: '<iframe src="char.html"></iframe>'
+								  }, {
+									title: '竞品分析', 
+									content: '<iframe src="char.html"></iframe>'
+								  }]
+								});  
+								
+			}
+			
+			var close = document.getElementById('close');
+			close.onclick = function(){
+				document.getElementById("aa").style.visibility='hidden';
+				close.style.visibility='hidden';
+			}
+		</script>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u253" class="ax_default _默认样式">
+        <div id="u253_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u254" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (图片) -->
+      <div id="u255" class="ax_default _图片1" onClick="serch()">
+        <img id="u255_img" class="img " src="images/map/u243.png"/>
+        <!-- Unnamed () -->
+        <div id="u256" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (文本框) -->
+      <div id="u257" class="ax_default text_field">
+        <input id="u257_input" type="text" value=""/>
+      </div>
+
+      <!-- Unnamed (图片)
+      <div id="u258" class="ax_default _图片2">
+        <img id="u258_img" class="img " src="images/map/u258.png"/>
+         Unnamed () 
+        <div id="u259" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div> 
+	  -->
+
+      <!-- Unnamed (图片) -->
+      <div id="u260" class="ax_default _图片2" onClick="locations()">
+        <img id="u260_img" class="img " src="images/map/u260.png"/>
+        <!-- Unnamed () -->
+        <div id="u261" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (动态面板) 
+      <div id="u262" class="ax_default">
+        <div id="u262_state0" class="panel_state" data-label="State1">
+          <div id="u262_state0_content" class="panel_state_content">
+
+             地图 (图片) 
+            <div id="u263" class="ax_default _图片2" data-label="地图">
+              <img id="u263_img" class="img " src="images/map/地图_u263.png"/>
+               Unnamed () 
+              <div id="u264" class="text" style="display: none; visibility: hidden">
+                <p><span></span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+	  -->
+
+      <!-- Unnamed (图片)
+      <div id="u265" class="ax_default _图片2">
+        <img id="u265_img" class="img " src="images/map/u265.png"/>
+        Unnamed () 
+        <div id="u266" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+	   -->
+
+      <!-- Unnamed (图片) -->
+      <div id="u267" class="ax_default _图片2">
+        <img id="u267_img" class="img " src="images/map/u267.png"/>
+        <!-- Unnamed () -->
+        <div id="u268" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u269" class="ax_default sticky_2">
+        <div id="u269_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u270" class="text" style="visibility: visible;">
+          <p><span>放大和缩小地图</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (水平线) -->
+      <div id="u271" class="ax_default arrow">
+        <img id="u271_img" class="img " src="images/map/u271.png"/>
+        <!-- Unnamed () -->
+        <div id="u272" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u273" class="ax_default sticky_2">
+        <div id="u273_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u274" class="text" style="visibility: visible;">
+          <p><span>打开收藏列表</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (水平线) -->
+      <div id="u275" class="ax_default arrow">
+        <img id="u275_img" class="img " src="images/map/u271.png"/>
+        <!-- Unnamed () -->
+        <div id="u276" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (垂直线) -->
+      <div id="u277" class="ax_default arrow">
+        <img id="u277_img" class="img " src="images/map/u277.png"/>
+        <!-- Unnamed () -->
+        <div id="u278" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u279" class="ax_default sticky_2">
+        <div id="u279_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u280" class="text" style="visibility: visible;">
+          <p><span>点击地图网格显示点击区域的各类数据信息</span></p>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </body>
+</html>

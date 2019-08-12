@@ -17,11 +17,23 @@ import javax.servlet.http.HttpSession;
 public class PageInterceptor extends HandlerInterceptorAdapter {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        response.setHeader("Access-Control-Allow-Methods", "*");
+        response.setHeader("Access-Control-Max-Age", "3600");
+        response.setHeader("Access-Control-Allow-Headers",
+                "Origin, X-Requested-With, Content-Type, Accept");
+        response.setHeader("Access-Control-Allow-Origin","*");
         HttpSession session =request.getSession();
-        User user = (User)session.getAttribute("userInfo");
-        if(user == null){
-            response.sendRedirect(request.getContextPath()+"login");
-        }
+        String userName =(String)session.getAttribute("userName");
+        System.out.println(userName);
+        StringBuffer url = request.getRequestURL();
+        String s = url.toString();
+
+      //  if(!(s.contains("login"))) {
+           // String user = (String) session.getAttribute("userName");
+           // if (user == null) {
+                //response.sendRedirect(request.getContextPath() + "/login");
+            //}
+       // }
         return true;
     }
 
